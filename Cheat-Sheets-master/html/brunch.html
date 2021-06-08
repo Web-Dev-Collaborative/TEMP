@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="./prism.css">
-<script async defer src="./prism.js"></script>
-</head>
-<body>;
-<h2 id="paths">Paths</h2>
-<pre><code>/
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./prism.css" />
+    <script async defer src="./prism.js"></script>
+  </head>
+  <body>
+    ;
+    <h2 id="paths">Paths</h2>
+    <pre><code>/
   app/
     assets/
   vendor/
   public/
   config.coffee</code></pre>
-<h2 id="config">Config</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span></a>
+    <h2 id="config">Config</h2>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="va">module</span>.<span class="at">exports</span> <span class="op">=</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-2" title="2">  <span class="dt">files</span><span class="op">:</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb2-3" title="3">    <span class="dt">javascripts</span><span class="op">:</span> <span class="op">{</span>  # or <span class="st">&#39;stylesheets&#39;</span> or <span class="st">&#39;templates&#39;</span></a>
 <a class="sourceLine" id="cb2-4" title="4">      <span class="dt">order</span><span class="op">:</span> <span class="op">{</span></a>
@@ -60,37 +69,45 @@
 <a class="sourceLine" id="cb2-41" title="41">    <span class="op">}</span></a>
 <a class="sourceLine" id="cb2-42" title="42">  <span class="op">}</span></a>
 <a class="sourceLine" id="cb2-43" title="43"></a>
-<a class="sourceLine" id="cb2-44" title="44">  <span class="dt">onCompile</span><span class="op">:</span> (files<span class="op">,</span> assets) <span class="kw">=&gt;</span> <span class="op">{</span> ... <span class="op">}</span></a></code></pre></div>
-<h2 id="plugins">Plugins</h2>
-<pre><code>plugins:
+<a class="sourceLine" id="cb2-44" title="44">  <span class="dt">onCompile</span><span class="op">:</span> (files<span class="op">,</span> assets) <span class="kw">=&gt;</span> <span class="op">{</span> ... <span class="op">}</span></a></code></pre>
+    </div>
+    <h2 id="plugins">Plugins</h2>
+    <pre><code>plugins:
   uglify:
     mangle: true
     compress:
       global_defs:
         DEBUG: false</code></pre>
-<h2 id="extensions">Extensions</h2>
-<p>Compile to CSS</p>
-<ul>
-<li>stylus-brunch</li>
-<li>less-brunch</li>
-<li>sass-brunch</li>
-</ul>
-<p>Compile to HTML</p>
-<ul>
-<li>static-jade-brunch</li>
-</ul>
-<p>Embedded templates</p>
-<ul>
-<li>emblem-brunch</li>
-</ul>
-<p>Etc</p>
-<ul>
-<li>uglify-js-brunch</li>
-<li>jshint-brunch</li>
-<li>imageoptimizer-brunch</li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://github.com/brunch/brunch/blob/master/docs/config.md" class="uri">https://github.com/brunch/brunch/blob/master/docs/config.md</a></li>
-</ul>
-</body></html>
+    <h2 id="extensions">Extensions</h2>
+    <p>Compile to CSS</p>
+    <ul>
+      <li>stylus-brunch</li>
+      <li>less-brunch</li>
+      <li>sass-brunch</li>
+    </ul>
+    <p>Compile to HTML</p>
+    <ul>
+      <li>static-jade-brunch</li>
+    </ul>
+    <p>Embedded templates</p>
+    <ul>
+      <li>emblem-brunch</li>
+    </ul>
+    <p>Etc</p>
+    <ul>
+      <li>uglify-js-brunch</li>
+      <li>jshint-brunch</li>
+      <li>imageoptimizer-brunch</li>
+    </ul>
+    <h2 id="references">References</h2>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/brunch/brunch/blob/master/docs/config.md"
+          class="uri"
+          >https://github.com/brunch/brunch/blob/master/docs/config.md</a
+        >
+      </li>
+    </ul>
+  </body>
+</html>
