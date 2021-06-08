@@ -8,36 +8,37 @@ weight: -1
 ---
 
 ## Reference
+
 {:.-three-column}
 
 ### Headers
 
 ```markdown
 # h1
+
 ## h2
+
 ### h3
 ```
 
 ```markdown
-Header 1
-========
+# Header 1
 ```
 
 ```markdown
-Header 2
---------
+## Header 2
 ```
 
 ### Emphasis
 
 ```markdown
-*italic*
+_italic_
 _italic_
 ```
 
 ```markdown
 **bold**
-__bold__
+**bold**
 ```
 
 ```markdown
@@ -47,8 +48,8 @@ __bold__
 ### Lists
 
 ```markdown
-* Item 1
-* Item 2
+- Item 1
+- Item 2
 ```
 
 ```markdown
@@ -90,18 +91,17 @@ __bold__
     makes a code block
 ```
 
-~~~markdown
+````markdown
 ```
 code fences
 ```
-~~~
+````
 
-
-~~~markdown
+````markdown
 ```js
-codeFences.withLanguage()
+codeFences.withLanguage();
 ```
-~~~
+````
 
 ### Blockquotes
 
@@ -116,11 +116,11 @@ codeFences.withLanguage()
 ### Horizontal line
 
 ```markdown
-----
+---
 ```
 
 ```markdown
-****
+---
 ```
 
 ### Tables
@@ -132,7 +132,7 @@ codeFences.withLanguage()
 ```
 
 ```markdown
-Column 1 Heading | Column 2 Heading
---- | ---
-Some content | Other content
+| Column 1 Heading | Column 2 Heading |
+| ---------------- | ---------------- |
+| Some content     | Other content    |
 ```

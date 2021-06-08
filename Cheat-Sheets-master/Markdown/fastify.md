@@ -10,20 +10,21 @@ intro: |
 ## Getting started
 
 ### Hello world
+
 {: .-prime}
 
 ```js
-const fastify = require('fastify')()
+const fastify = require("fastify")();
 
-fastify.get('/', (req, reply) => {
-  reply.send({ hello: 'world' })
-})
+fastify.get("/", (req, reply) => {
+  reply.send({ hello: "world" });
+});
 
-fastify.listen(3000, err => {
-  if (err) throw err
-  const port = fastify.server.address().port
-  console.log(`server listening on ${port}`)
-})
+fastify.listen(3000, (err) => {
+  if (err) throw err;
+  const port = fastify.server.address().port;
+  console.log(`server listening on ${port}`);
+});
 ```
 
 ### Plugins
@@ -31,7 +32,7 @@ fastify.listen(3000, err => {
 #### app.js
 
 ```js
-fastify.register(require('./route'))
+fastify.register(require("./route"));
 ```
 
 #### route.js
@@ -79,27 +80,26 @@ fastify.patch(···)
 ### Async/await
 
 ```js
-fastify.get('/', options, async (req, reply) => {
-  return data
+fastify.get("/", options, async (req, reply) => {
+  return data;
   // or
-  reply.send(data)
-})
+  reply.send(data);
+});
 ```
 
 When using async functions, you can either `return` data or use `reply.send`.
 
-Request/reply
--------------
+## Request/reply
 
 ### Request
 
 ```js
-request.query
-request.body
-request.params
-request.headers
-request.req  // Node.js core
-request.log.info('hello')
+request.query;
+request.body;
+request.params;
+request.headers;
+request.req; // Node.js core
+request.log.info("hello");
 ```
 
 See: [Request](https://github.com/fastify/fastify/blob/master/docs/Request.md)
@@ -109,23 +109,23 @@ See: [Request](https://github.com/fastify/fastify/blob/master/docs/Request.md)
 #### Response headers
 
 ```js
-reply.code(404)
-reply.header('Content-Type', 'text/html')
-reply.type('text/html')
+reply.code(404);
+reply.header("Content-Type", "text/html");
+reply.type("text/html");
 ```
 
 #### Redirects
 
 ```js
-reply.redirect('/foo')
-reply.redirect(302, '/foo')
+reply.redirect("/foo");
+reply.redirect(302, "/foo");
 ```
 
 #### Sending
 
 ```js
-reply.send(payload)
-reply.sent // → true|false
+reply.send(payload);
+reply.sent; // → true|false
 ```
 
 See: [Reply](https://github.com/fastify/fastify/blob/master/docs/Reply.md)
@@ -137,18 +137,18 @@ See: [Reply](https://github.com/fastify/fastify/blob/master/docs/Reply.md)
 ```js
 const schema = {
   querystring: {
-    name: { type: 'string' },
-    excitement: { type: 'integer' }
+    name: { type: "string" },
+    excitement: { type: "integer" },
   },
   response: {
     200: {
-      type: 'object',
+      type: "object",
       properties: {
-        hello: { type: 'string' }
-      }
-    }
-  }
-}
+        hello: { type: "string" },
+      },
+    },
+  },
+};
 ```
 
 #### Pass it to the route
@@ -158,6 +158,7 @@ fastify.get('/', { schema }, (req, reply) => {
   ···
 })
 ```
+
 {: data-line="1"}
 
 #### or (same as above)
@@ -170,23 +171,23 @@ fastify.route({
   handler: (req, reply) => { ··· }
 })
 ```
+
 {: data-line="4"}
 
 By defining a JSON schema, you get validation and improved performance.
 
 See: [Validation and serialize](https://github.com/fastify/fastify/blob/master/docs/Validation-And-Serialize.md)
 
-Plugins
--------
+## Plugins
 
 ### With function
 
 ```js
-fastify.register(
-  require('./route'),
-  err => { if (err) throw err }
-)
+fastify.register(require("./route"), (err) => {
+  if (err) throw err;
+});
 ```
+
 {: data-line="3"}
 
 #### route.js
@@ -198,18 +199,18 @@ module.exports = (fastify, options, next) => {
 }
 ```
 
-
 See: [Register](https://github.com/fastify/fastify/blob/master/docs/Getting-Started.md#register)
 
 ### Multiple
 
 ```js
-fastify.register([
-  require('./another-route'),
-  require('./yet-another-route')
-], opts, (err) => {
-  if (err) throw err
-})
+fastify.register(
+  [require("./another-route"), require("./yet-another-route")],
+  opts,
+  (err) => {
+    if (err) throw err;
+  }
+);
 ```
 
 You can pass arrays to `register()`.
@@ -217,10 +218,7 @@ You can pass arrays to `register()`.
 ### Register with prefix
 
 ```js
-fastify.register(
-  require('./route'),
-  { prefix: '/v1' }
-)
+fastify.register(require("./route"), { prefix: "/v1" });
 ```
 
 This prefixes all routes in that module.
@@ -228,9 +226,9 @@ This prefixes all routes in that module.
 ### Helmet
 
 ```js
-const helmet = require('fastify-helmet')
+const helmet = require("fastify-helmet");
 
-fastify.register(helmet)
+fastify.register(helmet);
 ```
 
 See: [fastify-helmet](https://github.com/fastify/fastify-helmet)
@@ -238,14 +236,14 @@ See: [fastify-helmet](https://github.com/fastify/fastify-helmet)
 ### fastify-plugin
 
 ```js
-const fp = require('fastify-plugin')
+const fp = require("fastify-plugin");
 
 module.exports = fp((fastify, opts, next) => {
   // your plugin code
-  fastify.decorate('utility', () => {})
+  fastify.decorate("utility", () => {});
 
-  next()
-}, '0.x')
+  next();
+}, "0.x");
 ```
 
 Allows you to limit Fastify versions via semver, and allows you not make a new Fastify scope.
@@ -254,46 +252,46 @@ See: [fastify-plugin](https://github.com/fastify/fastify-plugin)
 
 ### Decorators
 
-Middleware
-----------
+## Middleware
 
 ### Middleware
 
 ```js
-fastify.use(require('cors')())
-fastify.use(require('dns-prefetch-control')())
-fastify.use(require('frameguard')())
-fastify.use(require('hide-powered-by')())
-fastify.use(require('hsts')())
-fastify.use(require('ienoopen')())
-fastify.use(require('x-xss-protection')())
+fastify.use(require("cors")());
+fastify.use(require("dns-prefetch-control")());
+fastify.use(require("frameguard")());
+fastify.use(require("hide-powered-by")());
+fastify.use(require("hsts")());
+fastify.use(require("ienoopen")());
+fastify.use(require("x-xss-protection")());
 ```
 
 Compatible with Express and Restify middlewares. (Don't use these middleware, these are covered by [fastify-helmet](https://github.com/fastify/fastify-helmet).)
 
 See: [Middlewares](https://github.com/fastify/fastify/blob/master/docs/Middlewares.md)
 
-Template rendering
-------------------
+## Template rendering
 
 ### point-of-view
 
 ```js
-const fastify = require('fastify')()
+const fastify = require("fastify")();
 
-fastify.register(require('point-of-view'), {
+fastify.register(require("point-of-view"), {
   engine: {
-    ejs: require('ejs')
-  }
-})
+    ejs: require("ejs"),
+  },
+});
 ```
+
 {: data-line="3"}
 
 ```js
-fastify.get('/', (req, reply) => {
-  reply.view('/templates/index.ejs', { text: 'text' })
-})
+fastify.get("/", (req, reply) => {
+  reply.view("/templates/index.ejs", { text: "text" });
+});
 ```
+
 {: data-line="2"}
 
 Support `ejs`, `pug`, `handlebars` and `marko`.
@@ -303,13 +301,13 @@ See: [point-of-view](https://github.com/fastify/point-of-view)
 ### Options
 
 ```js
-fastify.register(require('point-of-view'), {
+fastify.register(require("point-of-view"), {
   engine: {
-    ejs: require('ejs')
+    ejs: require("ejs"),
   },
-  templates: '/templates',
-  options: {}
-})
+  templates: "/templates",
+  options: {},
+});
 ```
 
 `templates` lets you update the templates folder. `options` are options passed onto the template engines.

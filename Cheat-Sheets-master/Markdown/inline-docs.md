@@ -2,8 +2,8 @@
 title: Inline documentation
 ---
 
-* Ruby: rdoc
-* JavaScript: jsdoc
+- Ruby: rdoc
+- JavaScript: jsdoc
 
 ### RDoc
 

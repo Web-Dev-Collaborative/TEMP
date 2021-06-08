@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="./prism.css">
-<script async defer src="./prism.js"></script>
-</head>
-<body>;
-<ul>
-<li><a href="http://vowsjs.org/">Vowsjs.org</a></li>
-</ul>
-<h3 id="coffeescript-usage">CoffeeScript usage</h3>
-<pre><code>vows = require &quot;vows&quot;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./prism.css" />
+    <script async defer src="./prism.js"></script>
+  </head>
+  <body>
+    ;
+    <ul>
+      <li><a href="http://vowsjs.org/">Vowsjs.org</a></li>
+    </ul>
+    <h3 id="coffeescript-usage">CoffeeScript usage</h3>
+    <pre><code>vows = require &quot;vows&quot;
 assert = require &quot;assert&quot;
 
 vows
@@ -26,10 +32,10 @@ vows
         assert.equal number, 100
 
   .export(module)</code></pre>
-<h3 id="running">Running</h3>
-<pre><code>vows test/*-test.* --spec</code></pre>
-<h3 id="assertions">Assertions</h3>
-<pre><code>assert.equal a, b
+    <h3 id="running">Running</h3>
+    <pre><code>vows test/*-test.* --spec</code></pre>
+    <h3 id="assertions">Assertions</h3>
+    <pre><code>assert.equal a, b
 assert.notEqual a, b
 assert.strictEqual a, b
 
@@ -41,11 +47,12 @@ assert.isNull(object)
 assert.isNotZero(object)
 assert.isObject(object)
 assert.isString(object)</code></pre>
-<h3 id="async">Async</h3>
-<pre><code>.addBatch
+    <h3 id="async">Async</h3>
+    <pre><code>.addBatch
   topic: -&gt;
     doStuff()
     @callback 2
   &#39;check things&#39;: (n) -&gt;
     assert.equal 2, n</code></pre>
-</body></html>
+  </body>
+</html>

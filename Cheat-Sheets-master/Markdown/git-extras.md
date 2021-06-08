@@ -39,7 +39,6 @@ Also `git-bug` and `git-refactor`.
     $ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
     $ git fetch upstream; git merge upstream/master
 
-
 ### Tags
 
     $ git release v1.0.0           # commit, tag, push-tags
@@ -62,4 +61,4 @@ Assumes that changes will not be committed.
 
 ### References
 
- * https://github.com/visionmedia/git-extras
+- https://github.com/visionmedia/git-extras

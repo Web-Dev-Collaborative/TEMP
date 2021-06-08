@@ -181,12 +181,12 @@ button::-moz-focus-inner {
   padding-left: 10px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url('//www.google.com/cse/static/css/v2/clear.png');
+  background-image: url("//www.google.com/cse/static/css/v2/clear.png");
   cursor: pointer;
 }
 
 .gsc-clear-button:hover {
-  background-image: url('//www.google.com/cse/static/css/v2/clear-hover.png');
+  background-image: url("//www.google.com/cse/static/css/v2/clear-hover.png");
 }
 
 .gsc-search-box-tools .gsc-clear-button {
@@ -243,7 +243,6 @@ button::-moz-focus-inner {
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#888888')";
   /* For IE 5.5 - 7 */
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#888888');
-
 }
 
 .gsc-results-wrapper-visible {
@@ -292,11 +291,11 @@ input.gsc-input {
   width: 99%;
 }
 
-.gsc-search-box .gsc-input>input:hover,
+.gsc-search-box .gsc-input > input:hover,
 .gsc-input-box-hover {
   border: 1px solid #b9b9b9;
   border-top-color: #a0a0a0;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
@@ -310,7 +309,7 @@ input.gsc-input {
   padding-left: 16px;
   background-repeat: no-repeat;
   background-position: 1px 3px;
-  background-image: url('//www.google.com/cse/static/css/blue_check.gif');
+  background-image: url("//www.google.com/cse/static/css/blue_check.gif");
 }
 
 /* tabbed mode of search control
@@ -518,7 +517,7 @@ input.gsc-input {
   float: right;
   margin: 3px 5px 0;
   font-weight: normal;
-  font-size: .9em;
+  font-size: 0.9em;
   color: #676767;
 }
 
@@ -580,7 +579,7 @@ input.gsc-input {
 .gsc-adBlockVertical h2 {
   text-align: center;
   font-weight: normal;
-  font-size: .9em;
+  font-size: 0.9em;
   color: #676767;
   margin-top: 6px;
 }
@@ -662,7 +661,7 @@ input.gsc-input {
 }
 
 .gsc-webResult {
-  zoom: 1;  /* IE-specific hack to get the layout clearing right. */
+  zoom: 1; /* IE-specific hack to get the layout clearing right. */
 }
 
 /* Wrapper for a result. */
@@ -754,7 +753,8 @@ input.gsc-input {
   top: 12px;
   width: 7px;
   padding: 0 5px 0 5px;
-  background: url(//ssl.gstatic.com/ui/v1/disclosure/small-grey-disclosure-arrow-down.png) center no-repeat
+  background: url(//ssl.gstatic.com/ui/v1/disclosure/small-grey-disclosure-arrow-down.png)
+    center no-repeat;
 }
 
 .gsc-option-menu-invisible {
@@ -770,7 +770,7 @@ input.gsc-input {
 .gsc-control-cse .gsc-option-menu {
   background: #fff;
   border: 1px solid #eee;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 4px #eee;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: default;
@@ -823,13 +823,13 @@ input.gsc-input {
 .gs-promotion-image-box .gs-promotion-image {
   border: 1px solid #e2e2e2;
   max-width: 60px; /* Small icons width. */
-  max-height: 120px;  /* Limit height too. */
+  max-height: 120px; /* Limit height too. */
   /* IE-specific hack to simulate max-width and max-height. */
   /* For IE, image size will be 105 because various default
    * values for margins and borders are different.
    */
-  width: expression(this.width > 64 ? '64px': true);
-  height: expression(this.height > 120 ? '120px': true);
+  width: expression(this.width > 64 ? "64px": true);
+  height: expression(this.height > 120 ? "120px": true);
 }
 
 .gs-action {
@@ -852,7 +852,8 @@ input.gsc-input {
 .gs-action.generic .gs-action,
 .gs-action.link .gs-action {
   padding-left: 18px;
-  background: transparent url('//www.google.com/cse/images/action_icons_sprite.gif') no-repeat;
+  background: transparent
+    url("//www.google.com/cse/images/action_icons_sprite.gif") no-repeat;
 }
 
 .gs-action.cart .gs-action {
@@ -1003,7 +1004,7 @@ input.gsc-input {
   text-decoration: none;
 }
 
-.gs-imagePreviewArea>.gs-previewLink {
+.gs-imagePreviewArea > .gs-previewLink {
   -ms-flex-align: center;
   align-items: center;
   display: -ms-flexbox;
@@ -1066,7 +1067,6 @@ input.gsc-input {
 .gs-imageResult-popup .gs-text-box .gs-title {
   display: none;
 }
-
 
 /* Video Search
  * - single line title
@@ -1414,7 +1414,7 @@ input.gsc-input {
   text-decoration: underline;
 }
 
-.gs-result .gs-metadata{
+.gs-result .gs-metadata {
   color: #676767;
 }
 
@@ -1512,7 +1512,6 @@ input.gsc-input {
   vertical-align: top;
   margin-left: 4px;
 }
-
 
 /* book search specific over rides
  * - default image width garuntee
@@ -1671,7 +1670,8 @@ input.gsc-input {
   vertical-align: top;
   display: inline-block;
   height: 12px;
-  background: transparent url(/cse/static/css/cse_snippets_stars.png) 0 0 no-repeat;
+  background: transparent url(/cse/static/css/cse_snippets_stars.png) 0 0
+    no-repeat;
 }
 
 .gsc-review-agregate-first-line {
@@ -1761,11 +1761,13 @@ input.gsc-input {
 }
 
 .gsc-table-cell-snippet-close .gsc-zippy {
-  background: transparent url(/cse/static/css/plus_icons.png) -19px -5px no-repeat;
+  background: transparent url(/cse/static/css/plus_icons.png) -19px -5px
+    no-repeat;
 }
 
 .gsc-table-cell-snippet-open .gsc-zippy {
-  background: transparent url(/cse/static/css/minus_icons.png) -19px -5px no-repeat;
+  background: transparent url(/cse/static/css/minus_icons.png) -19px -5px
+    no-repeat;
 }
 
 /*
@@ -1773,7 +1775,7 @@ input.gsc-input {
  * See http://www.w3.org/TR/CSS21/visuren.html#propdef-display for details.
  */
 /* Gecko hack */
-html>body .gsc-inline-block {
+html > body .gsc-inline-block {
   display: -moz-inline-box;
   display: inline-block;
 }
@@ -1827,7 +1829,7 @@ html>body .gsc-inline-block {
   width: 28%;
   top: 30%;
   left: 35%;
-  border: 1px solid rgba(0, 0, 0, .333);
+  border: 1px solid rgba(0, 0, 0, 0.333);
 }
 
 .gsc-label-result-main-box-invisible {
@@ -1947,7 +1949,7 @@ html>body .gsc-inline-block {
   background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
   height: 29px;
   border: 1px solid #dcdcdc;
-  border-color: rgba(0, 0, 0, .1);
+  border-color: rgba(0, 0, 0, 0.1);
   color: #444;
   margin-right: 10px;
   width: 72px;
@@ -2028,7 +2030,7 @@ html>body .gsc-inline-block {
   width: 50%;
   padding: 30px;
   padding-bottom: 10px;
- }
+}
 
 .gsc-richsnippet-popup-box-invisible {
   display: none;
@@ -2061,8 +2063,8 @@ html>body .gsc-inline-block {
 }
 
 .gsc-richsnippet-popup-box-title {
- padding-bottom: 20px;
- font-size: 15px;
+  padding-bottom: 20px;
+  font-size: 15px;
 }
 
 .gsc-richsnippet-popup-box-title-text {
@@ -2139,7 +2141,7 @@ html>body .gsc-inline-block {
   float: right;
 }
 
-.gsc-imageResult>.gsc-expansionArea {
+.gsc-imageResult > .gsc-expansionArea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;

@@ -28,4 +28,4 @@ title: Imagemagick
 
 ### References
 
-  * http://www.noah.org/wiki/ImageMagick
+- http://www.noah.org/wiki/ImageMagick

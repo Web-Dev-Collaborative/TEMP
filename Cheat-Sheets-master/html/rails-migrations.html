@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="./prism.css">
-<script async defer src="./prism.js"></script>
-</head>
-<body>;
-<h3 id="automatically-make-migrations">Automatically make migrations</h3>
-<pre><code>$ rails generate migration RemovePartNumberFromProducts part_number:string
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./prism.css" />
+    <script async defer src="./prism.js"></script>
+  </head>
+  <body>
+    ;
+    <h3 id="automatically-make-migrations">Automatically make migrations</h3>
+    <pre><code>$ rails generate migration RemovePartNumberFromProducts part_number:string
 $ rails generate migration remove_part_number_from_products part_number # rails assumes string if not type given - and you can use snake_case
 
 $ rails generate migration AddNameToWidgets name:string
 $ rails g migration add_name_to_widgets name:string # you can use the short cut &#39;g&#39; instead of generate - they both do the same thing</code></pre>
-<h3 id="run-migrations">Run migrations</h3>
-<pre><code>$ rake db:migrate</code></pre>
-<h3 id="creating-tables">Creating tables</h3>
-<pre><code>create_table :users do |t|
+    <h3 id="run-migrations">Run migrations</h3>
+    <pre><code>$ rake db:migrate</code></pre>
+    <h3 id="creating-tables">Creating tables</h3>
+    <pre><code>create_table :users do |t|
   t.string :name
   t.text   :description
 
@@ -41,8 +47,8 @@ end
   :null (boolean)
   :limit (integer)
   :default</code></pre>
-<h3 id="operations">Operations</h3>
-<pre><code>add_column    :users, :first_name, :string
+    <h3 id="operations">Operations</h3>
+    <pre><code>add_column    :users, :first_name, :string
 remove_column :users, :first_name, :string
 
 change_column :users, :first_name, :text
@@ -62,8 +68,8 @@ remove_column
 
 add_index
 remove_index</code></pre>
-<h3 id="use-models">Use models</h3>
-<pre><code>class AddFlagToProduct &lt; ActiveRecord::Migration
+    <h3 id="use-models">Use models</h3>
+    <pre><code>class AddFlagToProduct &lt; ActiveRecord::Migration
   class Product &lt; ActiveRecord::Base
   end
  
@@ -75,15 +81,15 @@ remove_index</code></pre>
     end
   end
 end</code></pre>
-<h3 id="associations">Associations</h3>
-<pre><code>t.references :category   # kinda same as t.integer :category_id
+    <h3 id="associations">Associations</h3>
+    <pre><code>t.references :category   # kinda same as t.integer :category_id
 
 # Can have different types
 t.references :category, polymorphic: true</code></pre>
-<h3 id="auto-addremove-columns">Auto-Add/remove columns</h3>
-<pre><code>$ rails generate migration RemovePartNumberFromProducts part_number:string</code></pre>
-<h3 id="indices">Indices</h3>
-<pre><code># Simple
+    <h3 id="auto-addremove-columns">Auto-Add/remove columns</h3>
+    <pre><code>$ rails generate migration RemovePartNumberFromProducts part_number:string</code></pre>
+    <h3 id="indices">Indices</h3>
+    <pre><code># Simple
 add_index :suppliers, :name
 
 # Unique
@@ -103,11 +109,14 @@ add_index :accounts, [:name, :surname], :name =&gt; ‘by_name_surname’,
 # Sort order (no MySQL support)
 add_index :accounts, [:branch_id, :party_id, :surname],
   :order =&gt; {:branch_id =&gt; :desc, :part_id =&gt; :asc}</code></pre>
-<h3 id="in-console">In console</h3>
-<p>Use <code>ActiveRecord::Migration</code>.</p>
-<pre><code>ActiveRecord::Migration.add_index :posts, :slug</code></pre>
-<h3 id="references">References</h3>
-<ul>
-<li>http://apidock.com/rails/ActiveRecord/ConnectionAdapters/SchemaStatements/add_index</li>
-</ul>
-</body></html>
+    <h3 id="in-console">In console</h3>
+    <p>Use <code>ActiveRecord::Migration</code>.</p>
+    <pre><code>ActiveRecord::Migration.add_index :posts, :slug</code></pre>
+    <h3 id="references">References</h3>
+    <ul>
+      <li>
+        http://apidock.com/rails/ActiveRecord/ConnectionAdapters/SchemaStatements/add_index
+      </li>
+    </ul>
+  </body>
+</html>

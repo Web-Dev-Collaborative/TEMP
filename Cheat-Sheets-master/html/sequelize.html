@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="./prism.css">
-<script async defer src="./prism.js"></script>
-</head>
-<body>;
-<h3 id="api">API</h3>
-<pre><code>sequelize.sync().done -&gt; ...</code></pre>
-<h3 id="models">Models</h3>
-<pre><code>Project = sequelize.define(&#39;Project&#39;, {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./prism.css" />
+    <script async defer src="./prism.js"></script>
+  </head>
+  <body>
+    ;
+    <h3 id="api">API</h3>
+    <pre><code>sequelize.sync().done -&gt; ...</code></pre>
+    <h3 id="models">Models</h3>
+    <pre><code>Project = sequelize.define(&#39;Project&#39;, {
   title: Sequelize.STRING,
   description: Sequelize.TEXT,
   myDate: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
@@ -24,8 +30,8 @@
 });
 
 Project.hasMany(Task)</code></pre>
-<h3 id="finders">Finders</h3>
-<pre><code>Project.find(123).success (project) -&gt;
+    <h3 id="finders">Finders</h3>
+    <pre><code>Project.find(123).success (project) -&gt;
 
 Project.find({ where: {title: &#39;Hello&#39;} })
 Project.find({ where: {id: [1,3,4]} })
@@ -45,8 +51,8 @@ Project.find(
 .findAll({ offset: 10, limit: 2 })
 
 .count()</code></pre>
-<h3 id="build">Build</h3>
-<pre><code>item = Project.build({ ... })
+    <h3 id="build">Build</h3>
+    <pre><code>item = Project.build({ ... })
 
 item.title = &#39;...&#39;
 
@@ -57,4 +63,5 @@ item.updateAttributes({ title: &#39;...&#39; })
 item.destroy().success -&gt;
 
 item.values</code></pre>
-</body></html>
+  </body>
+</html>

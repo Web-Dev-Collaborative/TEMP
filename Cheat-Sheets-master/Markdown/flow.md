@@ -8,19 +8,22 @@ tags: [Featurable]
 ---
 
 ## Getting started
+
 {: .-three-column}
 
 ### Simple example
+
 {: .-prime}
 
 ```js
 /* @flow */
-function square (n: number) {
-  return n * n
+function square(n: number) {
+  return n * n;
 }
 
-const four = square(2)
+const four = square(2);
 ```
+
 {: data-line="1,2"}
 
 Most of what you need to do is to simply add annotations to function arguments!
@@ -30,10 +33,11 @@ See: [flow.org docs](https://flow.org/en/docs/)
 ### Type inference
 
 ```js
-function square (n: number) {
-  const result = n * n
+function square(n: number) {
+  const result = n * n;
 }
 ```
+
 {: data-line="2"}
 
 `result` is inferred to be a number because `number * number` will result in a number. There's no need to give it annotations.
@@ -45,16 +49,18 @@ type Person = {
   name: string,
   age: number,
   isAdmin: boolean,
-  likes: Array<string>
-}
+  likes: Array<string>,
+};
 ```
+
 {: data-line="1,2,3,4,5,6"}
 
 ```js
 function greet(user: Person) {
-  console.log('hello', user.name)
+  console.log("hello", user.name);
 }
 ```
+
 {: data-line="1"}
 
 ```js
@@ -66,7 +72,7 @@ This is the typical way to define the shape of complex objects.
 ### Variables
 
 ```js
-const count: number = 200
+const count: number = 200;
 ```
 
 You typically don't need to do this, function args are often enough.
@@ -76,7 +82,7 @@ See: [Variable types](https://flow.org/en/docs/types/variables/)
 ### Importing and exporting
 
 ```js
-import type { Person } from './types'
+import type { Person } from "./types";
 ```
 
 ```js
@@ -90,11 +96,11 @@ See: [Module types](https://flow.org/en/docs/types/modules)
 ### Union types
 
 ```js
-type Action = number | string
+type Action = number | string;
 ```
 
 ```js
-type Direction = 'left' | 'right'
+type Direction = "left" | "right";
 ```
 
 See: [Unions](https://flow.org/en/docs/types/unions/)
@@ -105,16 +111,17 @@ See: [Unions](https://flow.org/en/docs/types/unions/)
 
 ```js
 type Album = {
-  name: ?string
-}
+  name: ?string,
+};
 ```
+
 {: data-line="2"}
 
 ```js
-const a: Album = { }                 // ✗ Error
-const a: Album = { name: 'Blue' }    // ✓ OK
-const a: Album = { name: null }      // ✓ OK
-const a: Album = { name: undefined } // ✓ OK
+const a: Album = {}; // ✗ Error
+const a: Album = { name: "Blue" }; // ✓ OK
+const a: Album = { name: null }; // ✓ OK
+const a: Album = { name: undefined }; // ✓ OK
 ```
 
 This makes `name` either a string or null.
@@ -125,16 +132,17 @@ See: [Maybe types](https://flow.org/en/docs/types/primitives/#toc-maybe-types)
 
 ```js
 type Album = {
-  name?: string
-}
+  name?: string,
+};
 ```
+
 {: data-line="2"}
 
 ```js
-const a: Album = { } // ✓ OK
-a.name = 'Blue'      // ✓ OK
-a.name = null        // ✗ Error
-a.name = undefined   // ✓ OK
+const a: Album = {}; // ✓ OK
+a.name = "Blue"; // ✓ OK
+a.name = null; // ✗ Error
+a.name = undefined; // ✓ OK
 ```
 
 This makes an `Album` valid even if `name` is not part of the keys. This is different from "maybe" types.
@@ -142,6 +150,7 @@ This makes an `Album` valid even if `name` is not part of the keys. This is diff
 See: [Optional properties](https://flow.org/en/docs/types/primitives/#toc-optional-object-properties)
 
 ## Objects
+
 {: .-three-column}
 
 ### Extra object fields
@@ -149,18 +158,19 @@ See: [Optional properties](https://flow.org/en/docs/types/primitives/#toc-option
 ```js
 type Artist = {
   name: string,
-  label: string
-}
+  label: string,
+};
 ```
 
 ```js
 const a: Artist = {
-  name: 'Miguel Migs',
-  label: 'Naked Music'
-}
+  name: "Miguel Migs",
+  label: "Naked Music",
+};
 
-a.genre = 'House' // ✓ OK
+a.genre = "House"; // ✓ OK
 ```
+
 {: data-line="6"}
 
 You can add more fields to an object.
@@ -172,15 +182,17 @@ See: [Width subtyping](https://flow.org/en/docs/lang/width-subtyping/)
 ```js
 type Artist = {|
   name: string,
-  label: string
-|}
+  label: string,
+|};
 ```
+
 {: data-line="1,4"}
 
 ```js
 const a: Artist = { ··· }
 a.genre = 'House' // ✗ Error
 ```
+
 {: data-line="2"}
 
 Exact object types prevent extra properties from being added to an object.
@@ -191,9 +203,10 @@ See: [Exact object types](https://flow.org/en/docs/types/objects/#toc-exact-obje
 
 ```js
 type Items = {
-  [key: string]: Item
-}
+  [key: string]: Item,
+};
 ```
+
 {: data-line="2"}
 
 See: [Dynamic object keys](https://flow.org/docs/objects.html#objects-as-maps)
@@ -203,7 +216,7 @@ See: [Dynamic object keys](https://flow.org/docs/objects.html#objects-as-maps)
 ### Primitives
 
 | Type            | Description                  |
-| ---             | ---                          |
+| --------------- | ---------------------------- | ----------- |
 | `any`           |                              |
 | `boolean`       |                              |
 | `mixed`         |                              |
@@ -221,20 +234,20 @@ See: [Dynamic object keys](https://flow.org/docs/objects.html#objects-as-maps)
 | `Object`        |                              |
 | ---             | ---                          |
 | `?number`       | Maybe (number, void, null)   |
-| `a | b`         | Union types                  |
+| `a              | b`                           | Union types |
 
 ### Enums
 
 ```js
-type Suit = "Diamonds" | "Clubs" | "Hearts" | "Spades"
+type Suit = "Diamonds" | "Clubs" | "Hearts" | "Spades";
 
 const countries = {
   US: "United States",
   IT: "Italy",
-  FR: "France"
-}
+  FR: "France",
+};
 
-type Country = $Keys<typeof countries>
+type Country = $Keys<typeof countries>;
 ```
 
 See: [Enums](https://flow.org/docs/utility-types.html#keyst)
@@ -245,12 +258,12 @@ See: [Enums](https://flow.org/docs/utility-types.html#keyst)
 type Tree = {
   foo: string,
   bar: number,
-  qux: (foo: string, bar: number) => boolean
-}
+  qux: (foo: string, bar: number) => boolean,
+};
 
 type Generic<T> = {
-  foo: T
-}
+  foo: T,
+};
 ```
 
 See: [Type aliases](https://flow.org/docs/quick-reference.html#type-aliases)
@@ -272,14 +285,16 @@ See: [Generic classes](https://flow.org/docs/quick-reference.html#generics)
 
 ```js
 interface Jsonable {
-  toJSON(): string
+  toJSON(): string;
 }
 
 class Foo {
-  toJSON() { return '{}' }
+  toJSON() {
+    return "{}";
+  }
 }
 
-(new Foo: Jsonable)
+(new Foo(): Jsonable);
 ```
 
 See: [Interfaces](https://flow.org/docs/quick-reference.html#interfaces)
@@ -287,7 +302,7 @@ See: [Interfaces](https://flow.org/docs/quick-reference.html#interfaces)
 ### Functions
 
 ```js
-const callback: () => void = function () {}
+const callback: () => void = function () {};
 ```
 
 ```js
@@ -304,12 +319,12 @@ See: [Functions](https://flow.org/docs/functions.html)
 ### Imports
 
 ```js
-import type { Person } from '../person'
-import typeof Config from '../config'
+import type { Person } from "../person";
+import typeof Config from "../config";
 ```
 
 ```js
-export type Person = { id: string }
+export type Person = { id: string };
 ```
 
 ### Comment syntax
@@ -327,11 +342,11 @@ function add(n /*: number */) { ... }
 ```js
 type Props = {
   bar: number,
-}
+};
 
 type State = {
   open: boolean,
-}
+};
 
 class Foo extends React.Component<Props, State> {
   // Component code
@@ -343,14 +358,16 @@ class Foo extends React.Component<Props, State> {
 ### Examples
 
 ```js
-var myNumbers: Array<number> = [42]
-function foo(): any { return 42 }
-var b: boolean = false
-var b: ?boolean = false  /* maybe */
-var b: string | boolean = false
+var myNumbers: Array<number> = [42];
+function foo(): any {
+  return 42;
+}
+var b: boolean = false;
+var b: ?boolean = false; /* maybe */
+var b: string | boolean = false;
 
-var a: Class<MyClass> = MyClass
-var b: MyClass = new a()
+var a: Class<MyClass> = MyClass;
+var b: MyClass = new a();
 ```
 
 ### Function signature

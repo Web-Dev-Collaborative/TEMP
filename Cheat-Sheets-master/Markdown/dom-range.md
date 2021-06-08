@@ -4,13 +4,15 @@ category: JavaScript
 ---
 
 ### Creating ranges
+
 See <http://devdocs.io/dom/document/createrange>
 
 ```js
-var range = document.createRange()
+var range = document.createRange();
 ```
 
 ## Methods
+
 See <http://devdocs.io/dom/range>
 
 ```js
@@ -24,44 +26,37 @@ range
   .setEndAfter(node)
 
   .selectNode(node)
-  .selectNodeContents(node)
+  .selectNodeContents(node);
 ```
 
 ### Collapsing
 
 ```js
 range
-  .collapse()     // to end (a single point)
-  .collapse(true) // to start (a single point)
-  .collapsed      // true | false
+  .collapse() // to end (a single point)
+  .collapse(true).collapsed; // to start (a single point) // true | false
 ```
 
 ### Operations
 
 ```js
 range
-  .cloneContents()   // copy => DocumentFragment
+  .cloneContents() // copy => DocumentFragment
   .extractContents() // cut  => DocumentFragment
-  .deleteContents()  // delete
+  .deleteContents() // delete
 
-  .insertNode(node)
+  .insertNode(node);
 ```
 
 ### Etc
 
 ```js
-range
-  .toString()
+range.toString();
 ```
 
 ### Read-only attributes
 
 ```js
-range
-  .collapsed         // true/false
-  .startContainer    // Node
-  .startOffset
-  .endContainer      // Node
-  .endOffset
-  .commonAncestorContainer // closest of start and end containers
+range.collapsed.startContainer.startOffset.endContainer.endOffset // true/false // Node // Node
+  .commonAncestorContainer; // closest of start and end containers
 ```

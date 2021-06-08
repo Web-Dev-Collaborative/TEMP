@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="./prism.css">
-<script async defer src="./prism.js"></script>
-</head>
-<body>;
-<h3 id="usage">Usage</h3>
-<pre><code>require &#39;minitest/autorun&#39;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./prism.css" />
+    <script async defer src="./prism.js"></script>
+  </head>
+  <body>
+    ;
+    <h3 id="usage">Usage</h3>
+    <pre><code>require &#39;minitest/autorun&#39;
 
 describe &quot;X&quot; do
   before do .. end
@@ -22,8 +28,8 @@ describe &quot;X&quot; do
     assert true
   end
 end</code></pre>
-<h3 id="specs-.must.wont">Specs (.must/.wont)</h3>
-<pre><code>expect(x)
+    <h3 id="specs-.must.wont">Specs (.must/.wont)</h3>
+    <pre><code>expect(x)
 .must_be :==, 0
 .must_equal b
 .must_be_close_to 2.99999
@@ -45,8 +51,8 @@ end</code></pre>
 proc { ... }.must_output out_or_nil [, err]
 proc { ... }.must_raise exception
 proc { ... }.must_throw sym</code></pre>
-<h3 id="unittestcase">Unit::TestCase</h3>
-<pre><code>class TestHipster &lt; MiniTest::Unit::TestCase
+    <h3 id="unittestcase">Unit::TestCase</h3>
+    <pre><code>class TestHipster &lt; MiniTest::Unit::TestCase
   def setup
     @subject = [&quot;silly hats&quot;, &quot;skinny jeans&quot;]
   end
@@ -63,8 +69,8 @@ proc { ... }.must_throw sym</code></pre>
     refute @hipster.mainstream?
   end
 end</code></pre>
-<h3 id="assertions">Assertions</h3>
-<pre><code>assert
+    <h3 id="assertions">Assertions</h3>
+    <pre><code>assert
 assert_block { ... }
 assert_empty
 assert_equal 2, @size
@@ -83,9 +89,12 @@ assert_same
 assert_send
 assert_silent
 assert_throws</code></pre>
-<h3 id="minitestmock">MiniTest::Mock</h3>
-<p>A simple and clean mock system. There two essential methods at our disposal: expect and verify.</p>
-<pre><code>require &#39;minitest/autorun&#39;
+    <h3 id="minitestmock">MiniTest::Mock</h3>
+    <p>
+      A simple and clean mock system. There two essential methods at our
+      disposal: expect and verify.
+    </p>
+    <pre><code>require &#39;minitest/autorun&#39;
 
 describe Twipster, &quot;Make every tweet a hipster tweet.&quot; do
   before do
@@ -100,11 +109,12 @@ describe Twipster, &quot;Make every tweet a hipster tweet.&quot; do
     assert @twitter.verify # verifies tweet and hashtag was passed to `@twitter.update`
   end
 end</code></pre>
-<h3 id="reporters">Reporters</h3>
-<pre><code>gem &#39;minitest-reporters&#39;
+    <h3 id="reporters">Reporters</h3>
+    <pre><code>gem &#39;minitest-reporters&#39;
 
 require &#39;minitest/reporters&#39;
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 [Default, Spec, Progress, RubyMate, RubyMine, JUnit]</code></pre>
-</body></html>
+  </body>
+</html>

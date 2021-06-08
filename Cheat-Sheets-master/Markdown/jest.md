@@ -9,16 +9,18 @@ intro: |
   A quick overview to [Jest](https://facebook.github.io/jest/), a test framework for Node.js. This guide targets Jest v20.
 ---
 
-Testing
--------
+## Testing
+
 {: .-three-column}
 
 ### Quick start
+
 {: .-prime}
 
 ```bash
 npm install --save-dev jest babel-jest
 ```
+
 {: data-line="1"}
 
 ```js
@@ -38,11 +40,11 @@ See: [Getting started](http://facebook.github.io/jest/docs/en/getting-started.ht
 ### Writing tests
 
 ```js
-describe('My work', () => {
-  test('works', () => {
-    expect(2).toEqual(2)
-  })
-})
+describe("My work", () => {
+  test("works", () => {
+    expect(2).toEqual(2);
+  });
+});
 ```
 
 See: [describe()](http://facebook.github.io/jest/docs/en/api.html#describename-fn), [test()](http://facebook.github.io/jest/docs/en/api.html#testname-fn), [expect()](http://facebook.github.io/jest/docs/en/expect.html#content)
@@ -83,7 +85,6 @@ it.only(···) // alias: fit()
 
 See: [test.only](http://facebook.github.io/jest/docs/en/api.html#testonlyname-fn)
 
-
 ### Skipping tests
 
 ```js
@@ -93,18 +94,14 @@ it.skip(···) // alias: xit()
 
 See: [test.skip](http://facebook.github.io/jest/docs/en/api.html#testskipname-fn)
 
-Expect
-------
+## Expect
+
 {: .-three-column}
 
 ### Basic expectations
 
 ```js
-expect(value)
-  .not
-  .toBe(value)
-  .toEqual(value)
-  .toBeTruthy()
+expect(value).not.toBe(value).toEqual(value).toBeTruthy();
 ```
 
 Note that `toEqual` is a deep equality check.
@@ -113,27 +110,19 @@ See: [expect()](http://facebook.github.io/jest/docs/en/expect.html#expectvalue)
 ### Snapshots
 
 ```js
-expect(value)
-  .toMatchSnapshot()
+expect(value).toMatchSnapshot();
 ```
 
 ### Errors
 
 ```js
-expect(value)
-  .toThrow(error)
-  .toThrowErrorMatchingSnapshot()
+expect(value).toThrow(error).toThrowErrorMatchingSnapshot();
 ```
 
 ### Booleans
 
 ```js
-expect(value)
-  .toBeFalsy()
-  .toBeNull()
-  .toBeTruthy()
-  .toBeUndefined()
-  .toBeDefined()
+expect(value).toBeFalsy().toBeNull().toBeTruthy().toBeUndefined().toBeDefined();
 ```
 
 ### Numbers
@@ -144,7 +133,7 @@ expect(value)
   .toBeGreaterThan(number)
   .toBeGreaterThanOrEqual(number)
   .toBeLessThan(number)
-  .toBeLessThanOrEqual(number)
+  .toBeLessThanOrEqual(number);
 ```
 
 ### Objects
@@ -153,37 +142,32 @@ expect(value)
 expect(value)
   .toBeInstanceOf(Class)
   .toMatchObject(object)
-  .toHaveProperty(keyPath, value)
+  .toHaveProperty(keyPath, value);
 ```
 
 ### Objects
 
 ```js
-expect(value)
-  .toContain(item)
-  .toContainEqual(item)
-  .toHaveLength(number)
+expect(value).toContain(item).toContainEqual(item).toHaveLength(number);
 ```
 
 ### Strings
 
 ```js
-expect(value)
-  .toMatch(regexpOrString)
+expect(value).toMatch(regexpOrString);
 ```
 
 ### Others
 
 ```js
-expect.extend(matchers)
-expect.any(constructor)
-expect.addSnapshotSerializer(serializer)
+expect.extend(matchers);
+expect.any(constructor);
+expect.addSnapshotSerializer(serializer);
 
-expect.assertions(1)
+expect.assertions(1);
 ```
 
-More features
--------------
+## More features
 
 ### Asynchronous tests
 
@@ -194,6 +178,7 @@ test('works with promises', () => {
   })
 })
 ```
+
 {: data-line="2"}
 
 ```js
@@ -202,6 +187,7 @@ test('works with async/await', async () => {
   ···
 })
 ```
+
 {: data-line="2"}
 
 Return promises, or use async/await.
@@ -210,11 +196,12 @@ See: [Async tutorial](http://facebook.github.io/jest/docs/en/tutorial-async.html
 ### Snapshots
 
 ```jsx
-it('works', () => {
-  const output = something()
-  expect(output).toMatchSnapshot()
-})
+it("works", () => {
+  const output = something();
+  expect(output).toMatchSnapshot();
+});
 ```
+
 {: data-line="3"}
 
 First run creates a snapshot. Subsequent runs match the saved snapshot.
@@ -223,19 +210,21 @@ See: [Snapshot testing](http://facebook.github.io/jest/docs/en/snapshot-testing.
 ### React test renderer
 
 ```jsx
-import renderer from 'react-test-renderer'
+import renderer from "react-test-renderer";
 ```
+
 {: .-setup}
 
 ```jsx
-it('works', () => {
-  const tree = renderer.create(
-    <Link page="http://www.facebook.com">Facebook</Link>
-  ).toJSON()
+it("works", () => {
+  const tree = renderer
+    .create(<Link page="http://www.facebook.com">Facebook</Link>)
+    .toJSON();
 
-  expect(tree).toMatchSnapshot()
-})
+  expect(tree).toMatchSnapshot();
+});
 ```
+
 {: data-line="2,3,4"}
 
 React's test renderer can be used for Jest snapshots.
@@ -244,15 +233,15 @@ See: [Snapshot test](http://facebook.github.io/jest/docs/en/tutorial-react-nativ
 ### Timers
 
 ```js
-jest.useFakeTimers()
+jest.useFakeTimers();
 ```
 
 ```js
-it('works', () => {
-  jest.runOnlyPendingTimers()
-  jest.runTimersToTime(1000)
-  jest.runAllTimers()
-})
+it("works", () => {
+  jest.runOnlyPendingTimers();
+  jest.runTimersToTime(1000);
+  jest.runAllTimers();
+});
 ```
 
 See: [Timer Mocks](http://facebook.github.io/jest/docs/en/timer-mocks.html)
@@ -262,11 +251,11 @@ See: [Timer Mocks](http://facebook.github.io/jest/docs/en/timer-mocks.html)
 ### Mock functions
 
 ```js
-const fn = jest.fn()
+const fn = jest.fn();
 ```
 
 ```js
-const fn = jest.fn(n => n * n)
+const fn = jest.fn((n) => n * n);
 ```
 
 See: [Mock functions](http://facebook.github.io/jest/docs/en/mock-functions.html#using-a-mock-function)
@@ -285,25 +274,26 @@ expect(fn)
 expect(fn)
   .toHaveBeenCalledWith(expect.anything())
   .toHaveBeenCalledWith(expect.any(constructor))
-  .toHaveBeenCalledWith(expect.arrayContaining([ values ]))
+  .toHaveBeenCalledWith(expect.arrayContaining([values]))
   .toHaveBeenCalledWith(expect.objectContaining({ props }))
   .toHaveBeenCalledWith(expect.stringContaining(string))
-  .toHaveBeenCalledWith(expect.stringMatching(regexp))
+  .toHaveBeenCalledWith(expect.stringMatching(regexp));
 ```
 
 ### Instances
 
 ```js
-const Fn = jest.fn()
+const Fn = jest.fn();
 
-a = new Fn()
-b = new Fn()
+a = new Fn();
+b = new Fn();
 ```
 
 ```js
-Fn.mock.instances
+Fn.mock.instances;
 // → [a, b]
 ```
+
 {: data-line="1"}
 
 See: [.mock property](http://facebook.github.io/jest/docs/en/mock-functions.html#mock-property)
@@ -311,16 +301,17 @@ See: [.mock property](http://facebook.github.io/jest/docs/en/mock-functions.html
 ### Calls
 
 ```js
-const fn = jest.fn()
-fn(123)
-fn(456)
+const fn = jest.fn();
+fn(123);
+fn(456);
 ```
 
 ```js
-fn.mock.calls.length   // → 2
-fn.mock.calls[0][0]    // → 123
-fn.mock.calls[1][0]    // → 456
+fn.mock.calls.length; // → 2
+fn.mock.calls[0][0]; // → 123
+fn.mock.calls[1][0]; // → 456
 ```
+
 {: data-line="1,2,3"}
 
 See: [.mock property](http://facebook.github.io/jest/docs/en/mock-functions.html#mock-property)
@@ -328,32 +319,35 @@ See: [.mock property](http://facebook.github.io/jest/docs/en/mock-functions.html
 ### Return values
 
 ```js
-const fn = jest.fn(() => 'hello')
+const fn = jest.fn(() => "hello");
 ```
 
 #### or:
 
 ```js
-jest.fn().mockReturnValue('hello')
-jest.fn().mockReturnValueOnce('hello')
+jest.fn().mockReturnValue("hello");
+jest.fn().mockReturnValueOnce("hello");
 ```
 
 ### Mock implementations
 
 ```js
-const fn = jest.fn()
+const fn = jest
+  .fn()
   .mockImplementationOnce(() => 1)
-  .mockImplementationOnce(() => 2)
+  .mockImplementationOnce(() => 2);
 ```
+
 {: data-line="2,3"}
 
 ```js
-fn()    // → 1
-fn()    // → 2
+fn(); // → 1
+fn(); // → 2
 ```
 
 ## References
+
 {: .-one-column}
 
 - <http://facebook.github.io/jest/>
-{: .-also-see}
+  {: .-also-see}

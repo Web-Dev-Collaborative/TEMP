@@ -4,51 +4,46 @@ category: JavaScript
 ---
 
 ## Selection
+
 See <http://devdocs.io/dom/selection>
 
 ```js
-var selection = document.getSelection()
+var selection = document.getSelection();
 ```
 
 ## Methods
 
 ```js
 selection
-  .removeAllRanges()   // deselects
-  .addRange(range)     // sets a selection
-  .removeRange(range)  // remove a range
+  .removeAllRanges() // deselects
+  .addRange(range) // sets a selection
+  .removeRange(range); // remove a range
 ```
 
 ```js
-selection
-  .rangeCount          // ranges
-  .getRangeAt(0)       // get the 0th range
+selection.rangeCount // ranges
+  .getRangeAt(0); // get the 0th range
 ```
 
 ### Collapsing
 
 ```js
-selection
-  .collapse(parent, offset)
-  .collapseToEnd()
-  .collapseToStart()
-  .isCollapsed
+selection.collapse(parent, offset).collapseToEnd().collapseToStart()
+  .isCollapsed;
 ```
 
 ```js
-selection
-  .containsNode(node)
+selection.containsNode(node);
 ```
 
 ### Deleting
 
 ```js
-selection
-  .deleteFromDocument()
+selection.deleteFromDocument();
 ```
 
 ### Events
 
 ```js
-document.addEventListener('selectionchange', () => {})
+document.addEventListener("selectionchange", () => {});
 ```

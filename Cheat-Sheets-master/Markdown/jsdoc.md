@@ -20,22 +20,24 @@ weight: -1
  *     foo('hello')
  */
 
-function foo(n) { return n }
+function foo(n) {
+  return n;
+}
 ```
 
 See: <http://usejsdoc.org/index.html>
 
 ### Types
 
-| Type                         | Description           |
-| ---                          | ---                   |
-| `@param {string=} n`         | Optional              |
-| `@param {string} [n]`        | Optional              |
-| `@param {(string|number)} n` | Multiple types        |
-| `@param {*} n`               | Any type              |
-| `@param {...string} n`       | Repeatable arguments  |
-| `@param {string} [n="hi"]`   | Optional with default |
-| `@param {string[]} n`        | Array of strings      |
+| Type                            | Description                           |
+| ------------------------------- | ------------------------------------- | -------------- |
+| `@param {string=} n`            | Optional                              |
+| `@param {string} [n]`           | Optional                              |
+| `@param {(string                | number)} n`                           | Multiple types |
+| `@param {*} n`                  | Any type                              |
+| `@param {...string} n`          | Repeatable arguments                  |
+| `@param {string} [n="hi"]`      | Optional with default                 |
+| `@param {string[]} n`           | Array of strings                      |
 | `@return {Promise<string[]>} n` | Promise fulfilled by array of strings |
 
 See: <http://usejsdoc.org/tags-type.html>
@@ -46,14 +48,14 @@ See: <http://usejsdoc.org/tags-type.html>
 /**
  * @type {number}
  */
-var FOO = 1
+var FOO = 1;
 ```
 
 ```js
 /**
  * @const {number}
  */
-const FOO = 1
+const FOO = 1;
 ```
 
 ### Typedef
@@ -74,8 +76,7 @@ const FOO = 1
  * @param {Song} song - The {@link Song} to be played
  */
 
-function play (song) {
-}
+function play(song) {}
 ```
 
 See: <http://usejsdoc.org/tags-typedef.html>
@@ -95,8 +96,7 @@ See: <http://usejsdoc.org/tags-typedef.html>
  * @param {Song} song - The {@link Song} to be played
  */
 
-function play (song) {
-}
+function play(song) {}
 ```
 
 See: <http://usejsdoc.org/tags-typedef.html>
@@ -112,7 +112,7 @@ See: <http://usejsdoc.org/tags-typedef.html>
  * @param {Bar} x
  */
 
-function test(x) { }
+function test(x) {}
 ```
 
 This syntax is [TypeScript-specific](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript#import-types).

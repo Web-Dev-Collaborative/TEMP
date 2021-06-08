@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="./prism.css">
-<script async defer src="./prism.js"></script>
-</head>
-<body>;
-<h3 id="common-stuff">Common stuff</h3>
-<pre><code>redirect_to root_url
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./prism.css" />
+    <script async defer src="./prism.js"></script>
+  </head>
+  <body>
+    ;
+    <h3 id="common-stuff">Common stuff</h3>
+    <pre><code>redirect_to root_url
 redirect_to root_url, notice: &quot;Good.&quot;</code></pre>
-<h3 id="special-hashes">Special hashes</h3>
-<pre><code>session[:user_id] = nil
+    <h3 id="special-hashes">Special hashes</h3>
+    <pre><code>session[:user_id] = nil
 
 flash[:notice] = &quot;Hello&quot;    # Gets flushed on next request
 flash.keep                  # Persist flash values
@@ -27,20 +33,20 @@ params[:page]
 query_parameters
 path_parameters
 request_parameters</code></pre>
-<h3 id="respond_to">respond_to</h3>
-<pre><code>respond_to do |format|
+    <h3 id="respond_to">respond_to</h3>
+    <pre><code>respond_to do |format|
   format.html
   format.xml  { render xml: @users }
   format.json { render json: @users }
   format.js    # Will be executed by the browser
 end</code></pre>
-<h3 id="default_url_options">default_url_options</h3>
-<pre><code># The options parameter is the hash passed in to &#39;url_for&#39;
+    <h3 id="default_url_options">default_url_options</h3>
+    <pre><code># The options parameter is the hash passed in to &#39;url_for&#39;
 def default_url_options(options)
   {:locale =&gt; I18n.locale}
 end</code></pre>
-<h3 id="filters">Filters</h3>
-<pre><code># Filter with callbacks
+    <h3 id="filters">Filters</h3>
+    <pre><code># Filter with callbacks
 before_filter :authenticate
 before_filter :authenticate, except: [:login]
 before_filter :authenticate, only: [:login]
@@ -67,8 +73,8 @@ around_filter :wrap_in_transaction
 def wrap_in_transaction(&amp;blk)
   ActiveRecord::Base.transaction { yield }
 end</code></pre>
-<h3 id="http-basic-authentication">HTTP basic authentication</h3>
-<pre><code>before_filter :authenticate
+    <h3 id="http-basic-authentication">HTTP basic authentication</h3>
+    <pre><code>before_filter :authenticate
 
 # Basic authentication:
 def authenticate
@@ -102,8 +108,8 @@ is_logged_in = authenticate_with_http_token do |token, options|
 end
 
 request_http_token_authentication  unless is_logged_in</code></pre>
-<h3 id="requestresponse">Request/response</h3>
-<pre><code>request.host            #=&gt; &quot;www.example.com&quot;
+    <h3 id="requestresponse">Request/response</h3>
+    <pre><code>request.host            #=&gt; &quot;www.example.com&quot;
 request.domain          #=&gt; &quot;www.example.com&quot;
 request.domain(n=2)     #=&gt; &quot;example.com&quot;
 request.port            #=&gt; 80
@@ -127,8 +133,8 @@ request.post?
 request.put?
 request.delete?
 request.head?</code></pre>
-<h3 id="response">response</h3>
-<pre><code>response.body
+    <h3 id="response">response</h3>
+    <pre><code>response.body
 response.status         #=&gt; 404
 response.location       # Redirect location
 response.content_type
@@ -136,13 +142,28 @@ response.charset
 response.headers
 
 response.headers[&quot;Content-Type&quot;] = &quot;application/pdf&quot;</code></pre>
-<h3 id="streaming">Streaming</h3>
-<pre><code>send_data pdfdata, filename: &quot;foo.pdf&quot;, type: &quot;application/pdf&quot;
+    <h3 id="streaming">Streaming</h3>
+    <pre><code>send_data pdfdata, filename: &quot;foo.pdf&quot;, type: &quot;application/pdf&quot;
 send_file Rails.root.join(&#39;public&#39;,&#39;filename.txt&#39;) [filename: &#39;..&#39;, type: &#39;..&#39;]</code></pre>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Guide</a></li>
-<li><a href="http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html">HttpAuthentication::Basic</a></li>
-<li><a href="http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Token.html">HttpAuthentication::Token</a></li>
-</ul>
-</body></html>
+    <h3 id="references">References</h3>
+    <ul>
+      <li>
+        <a href="http://guides.rubyonrails.org/action_controller_overview.html"
+          >Guide</a
+        >
+      </li>
+      <li>
+        <a
+          href="http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html"
+          >HttpAuthentication::Basic</a
+        >
+      </li>
+      <li>
+        <a
+          href="http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Token.html"
+          >HttpAuthentication::Token</a
+        >
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<link rel="stylesheet" href="./prism.css">
-<script async defer src="./prism.js"></script>
-</head>
-<body>;
-<ul>
-<li><a href="https://github.com/domenic/sinon-chai">Sinon-chai</a></li>
-</ul>
-<h3 id="initialization">Initialization</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">var</span> sinon <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;sinon&#39;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="at">require</span>(<span class="st">&#39;chai&#39;</span>).<span class="at">use</span>(<span class="at">require</span>(<span class="st">&#39;sinon-chai&#39;</span>))<span class="op">;</span></a></code></pre></div>
-<h3 id="assert">Assert</h3>
-<pre><code>expect(spy).called
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./prism.css" />
+    <script async defer src="./prism.js"></script>
+  </head>
+  <body>
+    ;
+    <ul>
+      <li><a href="https://github.com/domenic/sinon-chai">Sinon-chai</a></li>
+    </ul>
+    <h3 id="initialization">Initialization</h3>
+    <div class="sourceCode" id="cb1">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">var</span> sinon <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;sinon&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="at">require</span>(<span class="st">&#39;chai&#39;</span>).<span class="at">use</span>(<span class="at">require</span>(<span class="st">&#39;sinon-chai&#39;</span>))<span class="op">;</span></a></code></pre>
+    </div>
+    <h3 id="assert">Assert</h3>
+    <pre><code>expect(spy).called
 expect(spy).calledOnce
 expect(spy).calledTwice
 expect(spy).calledThrice
@@ -36,8 +46,8 @@ expect(spy).returned
 expect(spy).alwaysReturned
 expect(spy).threw
 expect(spy).alwaysThrew</code></pre>
-<h3 id="should">Should</h3>
-<pre><code>spy.should.have.been.called
+    <h3 id="should">Should</h3>
+    <pre><code>spy.should.have.been.called
 spy.should.have.been.calledOnce
 spy.should.have.been.calledTwice
 spy.should.have.been.calledThrice
@@ -57,4 +67,5 @@ spy.should.have.returned(returnVal)
 spy.should.have.always.returned(returnVal)
 spy.should.have.thrown(errorObjOrErrorTypeStringOrNothing)
 spy.should.have.always.thrown(errorObjOrErrorTypeStringOrNothing)</code></pre>
-</body></html>
+  </body>
+</html>
