@@ -1,0 +1,302 @@
+-   <a href="#content" id="skip-main">Skip to main content</a>
+-   <a href="#main-q" id="skip-search">Skip to search</a>
+-   <a href="#select-language" id="skip-select-language">Skip to select language</a>
+
+-   Technologies
+    -   [Technologies Overview](https://developer.mozilla.org/en-US/docs/Web)
+    -   [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    -   [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+    -   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+    -   [Graphics](https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics)
+    -   [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+    -   [APIs](https://developer.mozilla.org/en-US/docs/Web/API)
+    -   [Browser Extensions](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)
+    -   [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML)
+-   References & Guides
+    -   [Learn web development](https://developer.mozilla.org/en-US/docs/Learn)
+    -   [Tutorials](https://developer.mozilla.org/en-US/docs/Web/Tutorials)
+    -   [References](https://developer.mozilla.org/en-US/docs/Web/Reference)
+    -   [Developer Guides](https://developer.mozilla.org/en-US/docs/Web/Guide)
+    -   [Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+    -   [Game development](https://developer.mozilla.org/en-US/docs/Games)
+    -   [...more docs](https://developer.mozilla.org/en-US/docs/Web)
+-   Feedback
+    -   [Send Feedback](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Feedback)
+    -   [Contribute to MDN](https://developer.mozilla.org/en-US/docs/MDN/Contribute)
+    -   [Report a content issue 🌐](https://github.com/mdn/content/issues/new)
+    -   [Report a platform issue 🌐](https://github.com/mdn/yari/issues/new)
+
+Search MDN
+
+1.  <a href="https://developer.mozilla.org/en-US/docs/Web" class="breadcrumb"><span data-property="name">Web technology for developers</span></a>
+2.  <a href="https://developer.mozilla.org/en-US/docs/Web/API" class="breadcrumb-penultimate"><span data-property="name">Web APIs</span></a>
+3.  <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints" class="breadcrumb-current-page"><span data-property="name">MediaTrackConstraints</span></a>
+
+-   <a href="#select-language" class="language-icon"><span class="show-desktop">Change language</span></a>
+
+Table of contents
+-----------------
+
+Table of contents
+
+-   [Properties](#properties)
+-   [Specifications](#specifications)
+-   [Browser compatibility](#browser_compatibility)
+-   [See also](#see_also)
+
+MediaTrackConstraints
+=====================
+
+The **`MediaTrackConstraints`** dictionary is used to describe a set of capabilities and the value or values each can take on. A constraints dictionary is passed into [`applyConstraints()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/applyConstraints "applyConstraints()") to allow a script to establish a set of exact (required) values or ranges and/or preferred values or ranges of values for the track, and the most recently-requested set of custom constraints can be retrieved by calling [`getConstraints()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getConstraints "getConstraints()").
+
+For each constraint, you can typically specify an exact value you need, an ideal value you want, a range of acceptable values, and/or a value which you'd like to be as close to as possible. The specifics vary somewhat depending on the type of the constrainable property.
+
+To learn more about how constraints work, see [Capabilities, constraints, and settings](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints).
+
+[Properties](#properties "Permalink to Properties")
+---------------------------------------------------
+
+Some combination—but not necessarily all—of the following properties will exist on the object. This may be because a given browser doesn't support the property, or because it doesn't apply. For example, because [RTP](https://developer.mozilla.org/en-US/docs/Glossary/RTP) doesn't provide some of these values during negotiation of a WebRTC connection, a track associated with a [`RTCPeerConnection`](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection) will not include certain values, such as [`facingMode`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/facingMode "facingMode") or [`groupId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/groupId "groupId").
+
+### [Properties of all media tracks](#properties_of_all_media_tracks "Permalink to Properties of all media tracks")
+
+[`deviceId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/deviceId "deviceId")  
+A [`ConstrainDOMString`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMString) object specifying a device ID or an array of device IDs which are acceptable and/or required.
+
+[`groupId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/groupId "groupId")  
+A [`ConstrainDOMString`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMString) object specifying a group ID or an array of group IDs which are acceptable and/or required.
+
+### [Properties of audio tracks](#properties_of_audio_tracks "Permalink to Properties of audio tracks")
+
+[`autoGainControl`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/autoGainControl "autoGainControl")  
+A [`ConstrainBoolean`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainBoolean) object which specifies whether automatic gain control is preferred and/or required.
+
+[`channelCount`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/channelCount "channelCount")  
+A [`ConstrainULong`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainULong) specifying the channel count or range of channel counts which are acceptable and/or required.
+
+[`echoCancellation`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/echoCancellation "echoCancellation")  
+A [`ConstrainBoolean`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainBoolean) object specifying whether or not echo cancellation is preferred and/or required.
+
+[`latency`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/latency "latency")  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) specifying the latency or range of latencies which are acceptable and/or required.
+
+[`noiseSuppression`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/noiseSuppression "noiseSuppression")  
+A [`ConstrainBoolean`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainBoolean) which specifies whether noise suppression is preferred and/or required.
+
+[`sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/sampleRate "sampleRate")  
+A [`ConstrainULong`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainULong) specifying the sample rate or range of sample rates which are acceptable and/or required.
+
+[`sampleSize`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/sampleSize "sampleSize")  
+A [`ConstrainULong`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainULong) specifying the sample size or range of sample sizes which are acceptable and/or required.
+
+[`volume`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/volume "volume")  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) specifying the volume or range of volumes which are acceptable and/or required.
+
+### [Properties of image tracks](#properties_of_image_tracks "Permalink to Properties of image tracks")
+
+<span id="whitebalancemode">whiteBalanceMode</span>  
+A [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) specifying one of `"none"`, `"manual"`, `"single-shot"`, or `"continuous"`.
+
+<span id="exposuremode">exposureMode</span>  
+A [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) specifying one of `"none"`, `"manual"`, `"single-shot"`, or `"continuous"`.
+
+<span id="focusmode">focusMode</span>  
+A [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) specifying one of `"none"`, `"manual"`, `"single-shot"`, or `"continuous"`.
+
+<span id="pointsofinterest">pointsOfInterest</span>  
+The pixel coordinates on the sensor of one or more points of interest. This is either an object in the form { x:*value*, y:*value* } or an array of such objects, where *value* is a double-precision integer.
+
+<span id="exposurecompensation">exposureCompensation</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying f-stop adjustment by up to ±3. 
+
+<span id="colortemperature">colorTemperature</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying a desired color temperature in degrees kelvin.
+
+<span id="iso">iso</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying a desired iso setting.
+
+<span id="brightness">brightness</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying a desired brightness setting.
+
+<span id="contrast">contrast</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying the degree of difference between light and dark.
+
+<span id="saturation">saturation</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying the degree of color intensity.
+
+<span id="sharpness">sharpness</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying the intensity of edges.
+
+<span id="focusdistance">focusDistance</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying distance to a focused object.
+
+<span id="zoom">zoom</span>  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) (a double-precision integer) specifying the desired focal length.
+
+<span id="torch">torch</span>  
+A [`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) defining whether the fill light is continuously connected, meaning it stays on as long as the track is active.
+
+### [Properties of video tracks](#properties_of_video_tracks "Permalink to Properties of video tracks")
+
+[`aspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/aspectRatio "aspectRatio")  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) specifying the video aspect ratio or range of aspect ratios which are acceptable and/or required.
+
+[`facingMode`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/facingMode "facingMode")  
+A [`ConstrainDOMString`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMString) object specifying a facing or an array of facings which are acceptable and/or required.
+
+[`frameRate`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/frameRate "frameRate")  
+A [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble) specifying the frame rate or range of frame rates which are acceptable and/or required.
+
+[`height`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/height "height")  
+A [`ConstrainULong`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainULong) specifying the video height or range of heights which are acceptable and/or required.
+
+[`width`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/width "width")  
+A [`ConstrainULong`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainULong) specifying the video width or range of widths which are acceptable and/or required.
+
+<span id="resizemode">resizeMode</span>  
+A [`ConstrainDOMString`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMString) object specifying a mode or an array of modes the UA can use to derive the resolution of a video track. Allowed values are `none` and `crop-and-scale`. `none` means that the user agent uses the resolution provided by the camera, its driver or the OS. `crop-and-scale` means that the user agent can use cropping and downscaling on the camera output  in order to satisfy other constraints that affect the resolution.
+
+### [Properties of shared screen tracks](#properties_of_shared_screen_tracks "Permalink to Properties of shared screen tracks")
+
+These constraints apply to `MediaTrackConstraints` objects specified as part of the [`DisplayMediaStreamConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/DisplayMediaStreamConstraints) object's [`video`](https://developer.mozilla.org/en-US/docs/Web/API/DisplayMediaStreamConstraints/video "video") property when using [`getDisplayMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia "getDisplayMedia()") to obtain a stream for screen sharing.
+
+[`cursor`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/cursor "cursor")  
+A [`ConstrainDOMString`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMString) which specifies whether or not to include the mouse cursor in the generated track, and if so, whether or not to hide it while not moving. The value may be a single one of the following strings, or an array of them to allow the browser flexibility in deciding what to do about the cursor.
+
+`always`  
+The mouse is always visible in the video content of the {domxref("MediaStream"), unless the mouse has moved outside the area of the content.
+
+`motion`  
+The mouse cursor is always included in the video if it's moving, and for a short time after it stops moving.
+
+`never`  
+The mouse cursor is never included in the shared video.
+
+[`displaySurface`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/displaySurface "displaySurface")  
+A [`ConstrainDOMString`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMString) which specifies the types of display surface that may be selected by the user. This may be a single one of the following strings, or a list of them to allow multiple source surfaces:
+
+`application`  
+The stream contains all of the windows of the application chosen by the user rendered into the one video track.
+
+`browser`  
+The stream contains the contents of a single browser tab selected by the user.
+
+`monitor`  
+The stream's video track contains the entire contents of one or more of the user's screens.
+
+`window`  
+The stream contains a single window selected by the user for sharing.
+
+[`logicalSurface`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/logicalSurface "logicalSurface")  
+A [`ConstrainBoolean`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainBoolean) value which may contain a single Boolean value or a set of them, indicating whether or not to allow the user to choose source surfaces which do not directly correspond to display areas. These may include backing buffers for windows to allow capture of window contents that are hidden by other windows in front of them, or buffers containing larger documents that need to be scrolled through to see the entire contents in their windows.
+
+[Specifications](#specifications "Permalink to Specifications")
+---------------------------------------------------------------
+
+<table><thead><tr class="header"><th>Specification</th><th>Status</th><th>Comment</th></tr></thead><tbody><tr class="odd"><td><a href="https://w3c.github.io/mediacapture-main/#dom-mediatrackconstraints" class="external" title="The &#39;Media Capture and Streams&#39; specification">Media Capture and Streams</a></td><td><span class="spec-cr">Candidate Recommendation</span></td><td>Initial definition.</td></tr><tr class="even"><td><a href="https://w3c.github.io/mediacapture-image/#mediatrackconstraintset-section" class="external" title="The &#39;MediaStream Image Capture&#39; specification">MediaStream Image Capture</a></td><td><span class="spec-wd">Working Draft</span></td><td>Adds image constraints.</td></tr></tbody></table>
+
+[Browser compatibility](#browser_compatibility "Permalink to Browser compatibility")
+------------------------------------------------------------------------------------
+
+BCD tables only load in the browser
+
+[See also](#see_also "Permalink to See also")
+---------------------------------------------
+
+-   [Media Capture and Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API)
+-   [Capabilities, constraints, and settings](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)
+-   [Screen Capture API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API)
+-   [Using the Screen Capture API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
+-   [`MediaDevices.getUserMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+-   [`MediaStreamTrack.getConstraints()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getConstraints)
+-   [`MediaStreamTrack.applyConstraints()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/applyConstraints)
+-   [`MediaDevices.getSupportedConstraints()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getSupportedConstraints)
+-   [`MediaTrackSupportedConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints)
+-   [`MediaStreamTrack.getSettings()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getSettings)
+
+#### Found a problem with this page?
+
+-   [Source on **GitHub**](https://github.com/mdn/content/blob/main/files/en-us/web/api/mediatrackconstraints/index.html "Folder: en-us/web/api/mediatrackconstraints (Opens in a new tab)")
+-   [Report a problem with this content on **GitHub**](https://github.com/mdn/content/issues/new?body=MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FMediaTrackConstraints%0A%0A%23%23%23%23+What+information+was+incorrect%2C+unhelpful%2C+or+incomplete%3F%0A%0A%0A%23%23%23%23+Specific+section+or+headline%3F%0A%0A%0A%23%23%23%23+What+did+you+expect+to+see%3F%0A%0A%0A%23%23%23%23+Did+you+test+this%3F+If+so%2C+how%3F%0A%0A%0A%3C%21--+Do+not+make+changes+below+this+line+--%3E%0A%3Cdetails%3E%0A%3Csummary%3EMDN+Content+page+report+details%3C%2Fsummary%3E%0A%0A*+Folder%3A+%60en-us%2Fweb%2Fapi%2Fmediatrackconstraints%60%0A*+MDN+URL%3A+https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FMediaTrackConstraints%0A*+GitHub+URL%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fblob%2Fmain%2Ffiles%2Fen-us%2Fweb%2Fapi%2Fmediatrackconstraints%2Findex.html%0A*+Last+commit%3A+https%3A%2F%2Fgithub.com%2Fmdn%2Fcontent%2Fcommit%2F5737ba49f3f0c3fc7587d329f1362a7a66afdd80%0A*+Document+last+modified%3A+2021-05-31T16%3A58%3A42.000Z%0A%0A%3C%2Fdetails%3E&title=Issue+with+%22MediaTrackConstraints%22%3A+%28short+summary+here+please%29&labels=Content%3AWebAPI%2Cneeds-triage "This will take you to https://github.com/mdn/content to file a new issue")
+-   Want to fix the problem yourself? See [our Contribution guide](https://github.com/mdn/content/blob/main/README.md).
+
+**Last modified:** May 31, 2021, [by MDN contributors](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/contributors.txt)
+
+Change your languageSelect your preferred language English (US)한국어Русский中文 (简体)
+
+Change language
+
+#### Related Topics
+
+1.  **[Media Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API)**
+2.  **[`MediaTrackConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints)**
+3.  Properties
+    1.  [`aspectRatio`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/aspectRatio)
+    2.  [`autoGainControl`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/autoGainControl)
+    3.  [`channelCount`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/channelCount)
+    4.  [`cursor`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/cursor)
+    5.  [`deviceId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/deviceId)
+    6.  [`displaySurface`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/displaySurface)
+    7.  [`echoCancellation`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/echoCancellation)
+    8.  [`facingMode`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/facingMode)
+    9.  [`frameRate`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/frameRate)
+    10. [`groupId`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/groupId)
+    11. [`height`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/height)
+    12. [`latency`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/latency)
+    13. [`logicalSurface`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/logicalSurface)
+    14. [`noiseSuppression`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/noiseSuppression)
+    15. [`sampleRate`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/sampleRate)
+    16. [`sampleSize`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/sampleSize)
+    17. [`volume`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/volume)
+    18. [`width`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/width)
+4.  Related pages for Media Capture and Streams
+    1.  [`AudioStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/AudioStreamTrack)
+    2.  [`BlobEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent)
+    3.  [`CanvasCaptureMediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStream)
+    4.  [`ConstrainBoolean`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainBoolean)
+    5.  [`ConstrainDOMString`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDOMString)
+    6.  [`ConstrainDouble`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainDouble)
+    7.  [`ConstrainLong`](https://developer.mozilla.org/en-US/docs/Web/API/ConstrainLong)
+    8.  [`DoubleRange`](https://developer.mozilla.org/en-US/docs/Web/API/DoubleRange)
+    9.  [`HTMLCanvasElement.captureStream()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream)
+    10. [`LongRange`](https://developer.mozilla.org/en-US/docs/Web/API/LongRange)
+    11. [`MediaDevices`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices)
+    12. [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
+    13. [`MediaStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack)
+    14. [`MediaStreamTrackEvent`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackEvent)
+    15. [`MediaTrackCapabilities`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackCapabilities)
+    16. [`MediaTrackSettings`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings)
+    17. [`MediaTrackSupportedConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints)
+    18. [`Navigator.mediaDevices`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices)
+    19. [`NavigatorUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUserMedia)
+    20. [`NavigatorUserMediaError`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUserMediaError)
+    21. [`VideoStreamTrack`](https://developer.mozilla.org/en-US/docs/Web/API/VideoStreamTrack)
+    22. [`navigator.mediaDevices.getUserMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/navigator/mediaDevices.getUserMedia)
+
+-   [Web Technologies](https://developer.mozilla.org/en-US/docs/Web)
+-   [Learn Web Development](https://developer.mozilla.org/en-US/docs/Learn)
+-   [About MDN](https://developer.mozilla.org/en-US/docs/MDN/About)
+-   [Feedback](https://developer.mozilla.org/en-US/docs/MDN/Feedback)
+
+<!-- -->
+
+-   [About](https://www.mozilla.org/about/)
+-   [MDN Web Docs Store](https://shop.spreadshirt.com/mdn-store/)
+-   [Contact Us](https://www.mozilla.org/contact/)
+-   [Firefox](https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral)
+
+#### MDN
+
+-   <a href="https://twitter.com/mozdevnet" class="social-icon twitter"><span class="visually-hidden">MDN on Twitter</span></a>
+-   <a href="https://github.com/mdn/" class="social-icon github"><span class="visually-hidden">MDN on Github</span></a>
+
+#### Mozilla
+
+-   <a href="https://twitter.com/mozilla" class="social-icon twitter"><span class="visually-hidden">Mozilla on Twitter</span></a>
+-   <a href="https://www.instagram.com/mozillagram/" class="social-icon instagram"><span class="visually-hidden">Mozilla on Instagram</span></a>
+
+© 2005-2021 Mozilla and individual contributors. Content is available under [these licenses](https://developer.mozilla.org/docs/MDN/About#Copyrights_and_licenses).
+
+-   [Terms](https://www.mozilla.org/about/legal/terms/mozilla)
+-   [Privacy](https://www.mozilla.org/privacy/websites/)
+-   [Cookies](https://www.mozilla.org/privacy/websites/#cookies)
